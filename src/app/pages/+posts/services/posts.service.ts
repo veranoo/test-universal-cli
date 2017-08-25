@@ -6,21 +6,27 @@ import 'rxjs/add/operator/map';
 
 import { Posts } from '../../../posts';
 
+const URL = 'https://jsonplaceholder.typicode.com';
+
 @Injectable()
 export class PostsService {
 
   constructor(private _httpService: Http) {}
 
   fetchPosts(): Observable<Posts[]> {
-    return this.fetchJSON('https://jsonplaceholder.typicode.com/posts');
+    return this.fetchJSON(`${URL}/posts`);
   }
 
   fetchPost(idx: string) {
-    return this.fetchJSON(`https://jsonplaceholder.typicode.com/posts/${idx}`);
+    return this.fetchJSON(`${URL}/posts/${idx}`);
   }
 
   fetchUser(idx: string) {
-    return this.fetchJSON(`https://jsonplaceholder.typicode.com/users/${idx}`);
+    return this.fetchJSON(`${URL}/users/${idx}`);
+  }
+
+  fetchComments(postId: string) {
+    return this.fetchJSON(`${URL}/comments?postId=${postId}`);
   }
 
   fetchJSON(url: string): Observable<any> {

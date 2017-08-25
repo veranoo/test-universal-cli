@@ -1,14 +1,26 @@
-<div *ngIf="post">
-  <h1>{{ post.title }}</h1>
-  <p>{{ post.body }}</p>
-</div>
+<div class="container">
+  <div *ngIf="post">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.body }}</p>
+  </div>
 
-<p>--------------------------------------------------------</p>
+  <p>--------------------------------------------------------</p>
 
-<div>Autor:</div>
+  <div *ngIf="user">
+    <p>name: <b>{{ user.name }}</b></p>
+    <p>username: <b>{{ user.username }}</b></p>
+    <p>email: <b>{{ user.email }}</b></p>
+  </div>
 
-<div *ngIf="user">
-  <p>name: <b>{{ user.name }}</b></p>
-  <p>username: <b>{{ user.username }}</b></p>
-  <p>email: <b>{{ user.email }}</b></p>
+  <p>--------------------------------------------------------</p>
+
+  <div class="row">
+    <div class="col-md-6" *ngFor="let comment of comments">
+      <ng-container *ngIf="comment">
+        <p><b>{{ comment.email }}</b></p>
+        <h2>{{ comment.name }}</h2>
+        <p>{{ comment.body }}</p>
+      </ng-container>
+    </div>
+  </div>
 </div>

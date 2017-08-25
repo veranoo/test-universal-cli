@@ -12,6 +12,7 @@ export class PostComponent implements OnInit {
 
   post: Posts;
   user;
+  comments;
 
   constructor(private _activatedRoute: ActivatedRoute,
               private _postsService: PostsService) {
@@ -22,11 +23,15 @@ export class PostComponent implements OnInit {
     const postID = params['postID'];
     this._postsService.fetchPost(postID)
       .subscribe((result) => {
-          this.post = result;
+        this.post = result;
       });
     this._postsService.fetchUser(postID)
       .subscribe((results) => {
-          this.user = results;
+        this.user = results;
+      });
+    this._postsService.fetchComments(postID)
+      .subscribe((results) => {
+        this.comments = results;
       });
   }
 
