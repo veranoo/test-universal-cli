@@ -1,3 +1,19 @@
 <p>
   posts works!
 </p>
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngIf="posts">
+      <div
+        *ngFor="let item of posts"
+        class="col-md-3 post"
+      >
+        <a [routerLink]="[ item.userId ]">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.body }}</p>
+        </a>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
   { path: 'home', loadChildren: 'app/pages/+home/home.module#HomeModule' },
@@ -7,4 +7,6 @@ const routes: Routes = [
   { path: 'posts', loadChildren: 'app/pages/+posts/posts.module#PostsModule' }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {
+  preloadingStrategy: PreloadAllModules
+});

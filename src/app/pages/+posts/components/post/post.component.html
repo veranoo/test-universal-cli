@@ -1,0 +1,14 @@
+<div *ngIf="post">
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.body }}</p>
+</div>
+
+<p>--------------------------------------------------------</p>
+
+<div>Autor:</div>
+
+<div *ngIf="user">
+  <p>name: <b>{{ user.name }}</b></p>
+  <p>username: <b>{{ user.username }}</b></p>
+  <p>email: <b>{{ user.email }}</b></p>
+</div>
