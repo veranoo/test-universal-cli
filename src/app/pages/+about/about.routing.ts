@@ -1,10 +1,10 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home.component';
 
+import { AboutComponent } from './components/@init/about.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', component: AboutComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);

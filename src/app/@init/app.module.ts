@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './component/app.component';
 import { routing } from './app.routing';
-import { HomeModule } from './home/home.module';
-import { AboutModule } from './about/about.module';
+import { HomeModule } from '../pages/+home/home.module';
+import { AboutModule } from '../pages/+about/about.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,6 @@ import { AboutModule } from './about/about.module';
   imports: [
     BrowserModule,
     HomeModule,
-    AboutModule,
     routing
   ],
   providers: [],
