@@ -5,6 +5,7 @@ import { AppComponent } from './component/app.component';
 import { routing } from './app.routing';
 import { HomeModule } from '../pages/+home/home.module';
 import { AboutModule } from '../pages/+about/about.module';
+import { PostsModule } from '../pages/+posts/posts.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,8 @@ import { AboutModule } from '../pages/+about/about.module';
   imports: [
     BrowserModule,
     HomeModule,
+    AboutModule,
+    PostsModule,
     routing
   ],
   providers: [],
