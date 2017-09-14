@@ -12,7 +12,7 @@ import { PostsModule } from '../pages/+posts/posts.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'my-app'}),
     HomeModule,
     AboutModule,
     PostsModule,
